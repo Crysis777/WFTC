@@ -1,0 +1,64 @@
+Node version: v8.9.2
+
+Cordova version: 7.1.0
+
+Config.xml file: 
+
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.wftc" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>WFTC</name>
+    <description>
+        An application to calculate the mandatory amount of words to write per week day to succefully finish a thesis.
+    </description>
+    <author email="Matze.P7@gmail.com" href="http://cordova.io">
+        Matthias Pfeiffer
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <engine name="android" spec="^6.3.0" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+</widget>
+
+
+Plugins: 
+
+cordova-plugin-whitelist
+
+Android platform:
+
+**************************************************************************
+The "android" command is deprecated.
+For manual SDK, AVD, and project management, please use Android Studio.
+For command-line tools, use tools\bin\sdkmanager.bat
+and tools\bin\avdmanager.bat
+**************************************************************************
+
+Invoking "C:\Users\pm673.BIT\AppData\Local\Android\Sdk\tools\bin\avdmanager" list target
+
+Loading local repository...                                                     [=========                              ] 25% Loading local repository...       [=========                              ] 25% Fetch remote repository...        [=========                              ] 25% Fetch remote repository...        [=========                              ] 25% Fetch remote repository...        [=======================================] 100% Fetch remote repository...       Available Android targets:
+----------
+id: 1 or "android-26"
+     Name: Android API 26
+     Type: Platform
+     API level: 26
+     Revision: 2
+----------
+id: 2 or "android-27"
+     Name: Android API 27
+     Type: Platform
+     API level: 27
+     Revision: 1
+
