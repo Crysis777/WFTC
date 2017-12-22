@@ -27,13 +27,6 @@
                 </form>
                 <button id="buttonName">Calculate</button>
 
-                <h2>TestPart</h2>
-                <input type="button" data-role="button" value="Test">
-                <ul data-role="listview">
-                    <li>A</li>
-                    <li>B</li>
-                    <li><a href="#OutputPage">C</a></li>
-                </ul>
             </div><!-- /content -->
 
             <div data-role="popup" id="popupNameError_emptyName">
@@ -107,26 +100,47 @@
         <!-- Start of fourth page -->
         <div data-role="page" id="SetupPage">
 
-                <div data-role="header">
-                    <h1>SetupPage</h1>
-                </div><!-- /header -->
+            <div data-role="header">
+                <h1>SetupPage</h1>
+            </div><!-- /header -->
     
-                <div data-role="main" class="ui-content">
-                    <p>Here you can setup the application</p>
-                    <p>And some other text as a placeholder</p>
-                </div><!-- /content -->
-                
-                <div data-role="footer">
-                    <div data-role="navbar">
-                        <ul>
-                            <li><a href="#InputPage" data-icon="home">Calculation</a></li>
-                            <li><a href="#HelpPage" data-icon="info">Help</a></li>
-                            <li><a href="#SetupPage" data-icon="gear">Setup</a></li>
-                        </ul>
-                    </div>
-                </div><!-- /footer -->
-    
-            </div><!-- /page -->
+            <div data-role="main" class="ui-content">
 
-        </body>
+                <form>
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                        <legend>Word counting precision</legend>
+                            
+                        <input type"radio" name="radiogroup_1" id="radiogroup_1a" value="1digit" checked="checked">
+                        <label for="radiogroup_1a">Exact to 1 digit</label>
+                        
+                        <label for="radiogroup_1b">Exact to 10 digits</label>                            
+                        <input type"radio" name="radiogroup_1" id="radiogroup_1b" value="10digit">
+                            
+                        <label for="radiogroup_1c">Exact to 100 digits</label>
+                        <input type"radio" name="radiogroup_1" id="radiogroup_1c" value="100digit">                            
+                    </fieldset>
+                </form>
+
+                <fieldset>
+                    <div data-role="fieldcontain">
+                        <label for="weekendYesNo">Include Weekend</label>
+                        <input type="checkbox" id="weekendYesNo" data-role="flipswitch">
+                    </div>
+                </fieldset>
+
+            </div><!-- /content -->
+                
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#InputPage" data-icon="home">Calculation</a></li>
+                        <li><a href="#HelpPage" data-icon="info">Help</a></li>
+                        <li><a href="#SetupPage" data-icon="gear">Setup</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+    
+        </div><!-- /page -->
+
+    </body>
 </html>

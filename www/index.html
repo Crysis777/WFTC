@@ -100,26 +100,47 @@
         <!-- Start of fourth page -->
         <div data-role="page" id="SetupPage">
 
-                <div data-role="header">
-                    <h1>SetupPage</h1>
-                </div><!-- /header -->
+            <div data-role="header">
+                <h1>SetupPage</h1>
+            </div><!-- /header -->
     
-                <div data-role="main" class="ui-content">
-                    <p>Here you can setup the application</p>
-                    <p>And some other text as a placeholder</p>
-                </div><!-- /content -->
-                
-                <div data-role="footer">
-                    <div data-role="navbar">
-                        <ul>
-                            <li><a href="#InputPage" data-icon="home">Calculation</a></li>
-                            <li><a href="#HelpPage" data-icon="info">Help</a></li>
-                            <li><a href="#SetupPage" data-icon="gear">Setup</a></li>
-                        </ul>
-                    </div>
-                </div><!-- /footer -->
-    
-            </div><!-- /page -->
+            <div data-role="main" class="ui-content">
 
-        </body>
+                <form>
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                        <legend>Word counting precision to:</legend>
+                        
+                        <label for="radiogroup_1a">1 digit</label>
+                        <input type="radio" name="radiogroup_1" id="radiogroup_1a" value="1digit" checked="checked">
+
+                        <label for="radiogroup_1b">10 digits</label>                            
+                        <input type="radio" name="radiogroup_1" id="radiogroup_1b" value="10digit">
+                            
+                        <label for="radiogroup_1c">100 digits</label>
+                        <input type="radio" name="radiogroup_1" id="radiogroup_1c" value="100digit">                            
+                    </fieldset>
+                </form>
+
+                <fieldset>
+                    <div data-role="fieldcontain">
+                        <label for="weekendYesNo">Include Weekend:</label>
+                        <input type="checkbox" id="weekendYesNo" data-role="flipswitch">
+                    </div>
+                </fieldset>
+
+            </div><!-- /content -->
+                
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#InputPage" data-icon="home">Calculation</a></li>
+                        <li><a href="#HelpPage" data-icon="info">Help</a></li>
+                        <li><a href="#SetupPage" data-icon="gear">Setup</a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+    
+        </div><!-- /page -->
+
+    </body>
 </html>
