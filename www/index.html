@@ -18,20 +18,34 @@
                 <h1>InputPage</h1>
             </div><!-- /header -->
 
-            <div role="main" class="ui-content">
+            <div data-role="main" class="ui-content">
                 <h2>Please type in your numbers and the date to calculate the required words/day</h2>
-                <p>Show me the results</p>
 
-                <input type="text" id="inputName" placeholder="Please input a name here...">
-                <input type="button" value="Speak to me!" onclick="myTextEventHandler();">
-                <input type="button" value="Delete" onclick="myTextDeleteHandler();">
-                <p id="result"></p>
+                <form>
+                    <label for="inputName">Name</label>
+                    <input id="inputName" type="text" placeholder="Please input a name here..." data-clear-btn="true">
+                </form>
+                <button id="buttonName">Calculate</button>
 
-                <p><a href="#OutputPage">OutputPage</a></p>
             </div><!-- /content -->
 
+            <div data-role="popup" id="popupNameError_emptyName">
+                <div data-role="header">
+                    <h1>Error</h1>
+                </div>
+                <div data-role="main" class="ui-content">
+                    <p>No name was typed in...</p>
+                </div>
+            </div>
+
             <div data-role="footer">
-                <h3><a href="#HelpPage">HelpPage</a></h3>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#InputPage" data-icon="home">Calculation</a></li>
+                        <li><a href="#HelpPage" data-icon="info">Help</a></li>
+                        <li><a href="#SetupPage" data-icon="gear">Setup</a></li>
+                    </ul>
+                </div>
             </div><!-- /footer -->
 
         </div><!-- /page -->
@@ -40,16 +54,21 @@
         <div data-role="page" id="OutputPage">   
 
             <div data-role="header">
-                <h1 data-color="blue">OutputPage</h1>
+                <h1>Results of your calculation</h1>
             </div><!-- /header -->    
 
-            <div role="main" class="ui-content">
-                <p data-color="pink">These are the results of your calculation. Better start earlier and work harder!</p>
-                <p><a href="#InputPage">InputPage</a></p>
+            <div data-role="main" class="ui-content">
+                <h2 id="resultsCalculation"></h2>
             </div><!-- /content -->
-            
+
             <div data-role="footer">
-                <h3><a href="#HelpPage">HelpPage</a></h3>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#InputPage" data-icon="home">Calculation</a></li>
+                        <li><a href="#HelpPage" data-icon="info">Help</a></li>
+                        <li><a href="#SetupPage" data-icon="gear">Setup</a></li>
+                    </ul>
+                </div>
             </div><!-- /footer -->
 
         </div><!-- /page -->
@@ -61,16 +80,46 @@
                 <h1>HelpPage</h1>
             </div><!-- /header -->
 
-            <div role="main" class="ui-content">
+            <div data-role="main" class="ui-content">
                 <p>This is an explanation about the functionality of this app. With this app you can calculate how many words you have to write every day to be able to finish your thesis in time.</p>
-                <p><a href="#InputPage">InputPage</a></p>
+                <p>And some other text as a placeholder</p>
             </div><!-- /content -->
             
             <div data-role="footer">
-                    <h3></h3>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#InputPage" data-icon="home">Calculation</a></li>
+                        <li><a href="#HelpPage" data-icon="info">Help</a></li>
+                        <li><a href="#SetupPage" data-icon="gear">Setup</a></li>
+                    </ul>
+                </div>
             </div><!-- /footer -->
 
         </div><!-- /page -->
+
+        <!-- Start of fourth page -->
+        <div data-role="page" id="SetupPage">
+
+                <div data-role="header">
+                    <h1>SetupPage</h1>
+                </div><!-- /header -->
+    
+                <div data-role="main" class="ui-content">
+                    <p>Here you can setup the application</p>
+                    <p>And some other text as a placeholder</p>
+                </div><!-- /content -->
+                
+                <div data-role="footer">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#InputPage" data-icon="home">Calculation</a></li>
+                            <li><a href="#HelpPage" data-icon="info">Help</a></li>
+                            <li><a href="#SetupPage" data-icon="gear">Setup</a></li>
+                        </ul>
+                    </div>
+                </div><!-- /footer -->
+    
+            </div><!-- /page -->
 
         </body>
 </html>

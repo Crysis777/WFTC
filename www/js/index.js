@@ -4,9 +4,11 @@
  * This is the logical part of the WFTC app
  * 
  */
+$(document).on("pagecreate", onPageLoaded);
 
-function myButtonEventHandler() {
-    alert(`You did not put any name inside the box...`);
+function onPageLoaded() {
+    $("#buttonName").attr("onclick", "myTextEventHandler();");
+    $("#buttonList").attr("onclick", "myListEventHandler();");
 }
 
 function myTextEventHandler() {
@@ -16,13 +18,13 @@ function myTextEventHandler() {
     console.log(`The name which was recognized is: "${textInput}"`);
 
     if(textInput.length === 0) {
-        myButtonEventHandler();
+        myTextErrorHandler();
     } else {
-        $("#result").text(`Hey "${textInput}"`);
+        $("#resultsCalculation").text("Hey " + textInput + "!");
+        $("body").pagecontainer("change","#OutputPage");
     }
 }
 
-function myTextDeleteHandler() {
-    $("#inputName").val(``);
-    $("#result").text(``);
+function myTextErrorHandler() {
+    $("#popupNameError_emptyName").popup("open");
 }
