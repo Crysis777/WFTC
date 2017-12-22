@@ -1,9 +1,7 @@
-platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.lock
-platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.bin
-platforms/android/.gradle/3.3/taskArtifacts/fileSnapshots.bin
-platforms/android/.gradle/3.3/taskArtifacts/fileHashes.bin
-platforms/android/.gradle/3.3/taskArtifacts/fileHashes.bin
-platforms/android/.gradle/3.3/taskArtifacts/fileSnapshots.bin
-platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.bin
-platforms/android/.gradle/3.3/taskArtifacts/taskArtifacts.lock
-platforms/android/assets/www/index.html
+.vscode/**
+hooks/**
+node_modules/**
+platforms/**
+plugins/**
+res/**
+typings/**
