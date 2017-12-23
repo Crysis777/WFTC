@@ -29,11 +29,7 @@ function myCalculationEventHandler() {
         dateDifference = Math.round(dateDifference / (1000*60*60*24));
         
         if(weekendYesNo != "on") {
-            let startDay = dateNow.getDay();
-            let endDay = dateInput.getDay();
-            let weeksDifference = dateDifference / 7;
-
-            
+            dateDifference = correctWeekends(dateNow.getDay(),dateInput.getDay(),dateDifference);
         }
         
         wordsToWrite = Math.round(numberInput / dateDifference);
@@ -41,10 +37,14 @@ function myCalculationEventHandler() {
         switch(roundingPrecision) {
             case 1:
                 break;
-            case 10:
-                wordsToWrite = roundToValue(wordsToWrite,10);
             case 100:
-                wordsToWrite = roundToValue(wordsToWrite,100);
+                wordsToWrite /= 100;
+                wordsToWrite = Math.round(wordsToWrite);
+                wordsToWrite *= 100;
+            case 10:
+                wordsToWrite /= 10;
+                wordsToWrite = Math.round(wordsToWrite);
+                wordsToWrite *= 10;
         }
 
         $("#valuesForCalculation").html(`
@@ -76,8 +76,29 @@ function myTextErrorHandler() {
     $("#popupNameError_emptyValues").popup("open");
 }
 
-function roundToValue(wordNumber, digits) {
-    let wordNumberCorrected;
+function correctWeekends(startDay, endDay, dateDifference) {
+    let weekDifference = dateDifference / 7;
 
-    return wordNumberCorrected;
+    for(i = 0;i < Math.floor(weekDifference); i++) {
+        dateDifference -= 2;
+    }
+
+    if(weekDifference - Math.floor(weekDifference) > 0) {
+        if(0 < startDay < 6 & 0 < endDay < 6 & startDay < endDay) {
+            return dateDifference;
+        }
+        if(0 < startDay < 6 & 0 < endDay < 6 & startDay > endDay) {
+            dateDifference -= 2;
+            return dateDifference;
+        }
+        if((startDay == 6 & endDay == 0) | (startDay == 6 & 0 < endDay < 6)) {
+            dateDifference -= 2;
+            return dateDifference;
+        }
+        if(startDay == 0) {
+            dateDifference -= 1;
+            return dateDifference;
+        }
+    }
+    return dateDifference;
 }
