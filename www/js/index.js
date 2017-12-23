@@ -7,24 +7,28 @@
 $(document).on("pagecreate", onPageLoaded);
 
 function onPageLoaded() {
-    $("#buttonName").attr("onclick", "myTextEventHandler();");
-    $("#buttonList").attr("onclick", "myListEventHandler();");
+    $("#buttonCalculate").attr("onclick", "myCalculationEventHandler();");
 }
 
-function myTextEventHandler() {
-    let textInput = $("#inputName").val();
-    
-    textInput = textInput.trim();
-    console.log(`The name which was recognized is: "${textInput}"`);
+function myCalculationEventHandler() {
+    let numberInput = $("#inputNumber").val();
+    numberInput = parseFloat(numberInput);
+    let dateInput = $("#inputDate").val();
+    dateInput = new Date(dateInput);
 
-    if(textInput.length === 0) {
+    if(numberInput.toString() == "NaN" || dateInput.toString() == "Invalid Date") {
         myTextErrorHandler();
     } else {
-        $("#resultsCalculation").text("Hey " + textInput + "!");
+        $("#valuesForCalculation").append(`
+            <p>Needed Words: ${numberInput}</p>
+            <p>Finishing Date: ${dateInput}</p>
+            `);
+        $("#resultsCalculation").text("Hey it works!");
         $("body").pagecontainer("change","#OutputPage");
     }
 }
 
 function myTextErrorHandler() {
-    $("#popupNameError_emptyName").popup("open");
+    $("#popupNameError_emptyValues").popup("open");
 }
+

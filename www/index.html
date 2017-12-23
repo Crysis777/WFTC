@@ -19,22 +19,27 @@
             </div><!-- /header -->
 
             <div data-role="main" class="ui-content">
-                <h2>Please type in your numbers and the date to calculate the required words/day</h2>
+                <h2>Words for thesis calculator</h2>
+
+                <p>Please type in your numbers and the date to calculate the required words/day</p>
 
                 <form>
-                    <label for="inputName">Name</label>
-                    <input id="inputName" type="text" placeholder="Please input a name here..." data-clear-btn="true">
+                    <label for="inputNumber">Number of words to write:</label>
+                    <input type="number" data-clear-btn="true" name="inputNumber" id="inputNumber" value="">
+
+                    <label for="inputDate">Finishing date:</label>
+                    <input type="date" data-clear-btn="true" name="inputDate" id="inputDate" value="">
                 </form>
-                <button id="buttonName">Calculate</button>
+                <button id="buttonCalculate">Calculate</button>
 
             </div><!-- /content -->
 
-            <div data-role="popup" id="popupNameError_emptyName">
+            <div data-role="popup" id="popupNameError_emptyValues">
                 <div data-role="header">
                     <h1>Error</h1>
                 </div>
                 <div data-role="main" class="ui-content">
-                    <p>No name was typed in...</p>
+                    <p>Not all data was typed in...</p>
                 </div>
             </div>
 
@@ -58,7 +63,8 @@
             </div><!-- /header -->    
 
             <div data-role="main" class="ui-content">
-                <h2 id="resultsCalculation"></h2>
+                <h2 id="valuesForCalculation"></h2>
+                <h3 id="resultsCalculation"></h3>
             </div><!-- /content -->
 
             <div data-role="footer">
@@ -81,8 +87,8 @@
             </div><!-- /header -->
 
             <div data-role="main" class="ui-content">
-                <p>This is an explanation about the functionality of this app. With this app you can calculate how many words you have to write every day to be able to finish your thesis in time.</p>
-                <p>And some other text as a placeholder</p>
+                <p>This is an explanation about the functionality of this app.</p>
+                <p>With this app you can calculate how many words you have to write every day to be able to finish your thesis in time.</p>
             </div><!-- /content -->
             
             <div data-role="footer">
